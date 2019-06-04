@@ -1,0 +1,4 @@
+# eventsRegistrator
+
+just for fun
+

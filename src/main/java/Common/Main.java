@@ -6,28 +6,28 @@ import static Common.Utils.testIterations;
 
 public class Main {
     public static void main(String[] args) {
-        EventRegisterImpl eventCounterImplMap = new EventRegisterImpl();
+        EventRegisterImpl eventRegister = new EventRegisterImpl();
         for (int i = 0; i < testIterations; i++) {
-            eventCounterImplMap.totalEvents++;
-            eventCounterImplMap.registerEvent(false);
+            eventRegister.totalEvents++;
+            eventRegister.registerEvent(false);
         }
         System.out.println("\t");
-        System.out.println("Total events generated: " + eventCounterImplMap.totalEvents);
+        System.out.println("Total events generated: " + eventRegister.totalEvents);
         System.out.println("\t");
         System.out.println("Case when time of events is sequentially generated..");
-        System.out.println("Total events founded for first period: -->" + eventCounterImplMap.getCountOfEventsForFirstPeriod());
-        System.out.println("Total events founded for second period: ->" + eventCounterImplMap.getCountOfEventsForSecondPeriod());
-        System.out.println("Total events founded for third period: -->" + eventCounterImplMap.getCountOfEventsForThirdPeriod());
+        System.out.println("Total events founded for first period: -->" + eventRegister.getCountOfEventsForFirstPeriod());
+        System.out.println("Total events founded for second period: ->" + eventRegister.getCountOfEventsForSecondPeriod());
+        System.out.println("Total events founded for third period: -->" + eventRegister.getCountOfEventsForThirdPeriod());
 
-        eventCounterImplMap = new EventRegisterImpl();
+        eventRegister = new EventRegisterImpl();
 
         for (int i = 0; i < testIterations; i++) {
-            eventCounterImplMap.registerEvent(true);
+            eventRegister.registerEvent(true);
         }
         System.out.println("\t");
         System.out.println("Case when time of event is random generated..");
-        System.out.println("Total events founded for first period (for now): -->" + eventCounterImplMap.getCountOfEventsForFirstPeriod());
-        System.out.println("Total events founded for second period (for now): ->" + eventCounterImplMap.getCountOfEventsForSecondPeriod());
-        System.out.println("Total events founded for third period (for now): -->" + eventCounterImplMap.getCountOfEventsForThirdPeriod());
+        System.out.println("Total events founded for first period (for now): -->" + eventRegister.getCountOfEventsForFirstPeriod());
+        System.out.println("Total events founded for second period (for now): ->" + eventRegister.getCountOfEventsForSecondPeriod());
+        System.out.println("Total events founded for third period (for now): -->" + eventRegister.getCountOfEventsForThirdPeriod());
     }
 }
